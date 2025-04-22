@@ -7,8 +7,15 @@ public class Grid : MonoBehaviour
     [SerializeField] private int gridSizeY;
     [SerializeField] private int gridSizeZ;
 
-    [SerializeField] private float nodeRadius;
-    [SerializeField] private float nodeSpace;
+    [SerializeField] private float nodeXRadius;
+    [SerializeField] private float nodeYRadius;
+    [SerializeField] private float nodeZRadius;
+
+
+    [SerializeField] private float nodeXSpace;
+    [SerializeField] private float nodeYSpace;
+    [SerializeField] private float nodeZSpace;
+
     Node[,,] grid;
     [SerializeField] private GameObject cube;
     [SerializeField] private Vector3 startPos;
@@ -26,7 +33,7 @@ public class Grid : MonoBehaviour
             {
                 for (int z = 0; z < gridSizeZ; z++)
                 {
-                    Vector3 worldPos = startPos + new Vector3(x * (nodeRadius + nodeSpace), y * (nodeRadius + nodeSpace), z * (nodeRadius + nodeSpace));
+                    Vector3 worldPos = startPos + new Vector3(x * (nodeXRadius + nodeXSpace), y * (nodeYRadius + nodeYSpace), z * (nodeZRadius + nodeZSpace));
                     grid[x, y, z] = new Node(x, y, z, worldPos, true);
                     Instantiate(cube, grid[x, y, z].worldPosition, Quaternion.identity, transform);
                 }
