@@ -119,6 +119,66 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &339393
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2407442422018815117, guid: 7138ca965206c614183c94065bc02506, type: 3}
+      propertyPath: m_Name
+      value: 1x1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075416325542325673, guid: 7138ca965206c614183c94065bc02506, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -30.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075416325542325673, guid: 7138ca965206c614183c94065bc02506, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075416325542325673, guid: 7138ca965206c614183c94065bc02506, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.770982
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075416325542325673, guid: 7138ca965206c614183c94065bc02506, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075416325542325673, guid: 7138ca965206c614183c94065bc02506, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075416325542325673, guid: 7138ca965206c614183c94065bc02506, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075416325542325673, guid: 7138ca965206c614183c94065bc02506, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075416325542325673, guid: 7138ca965206c614183c94065bc02506, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075416325542325673, guid: 7138ca965206c614183c94065bc02506, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075416325542325673, guid: 7138ca965206c614183c94065bc02506, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2407442422018815117, guid: 7138ca965206c614183c94065bc02506, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 968518941}
+  m_SourcePrefab: {fileID: 100100000, guid: 7138ca965206c614183c94065bc02506, type: 3}
 --- !u!1 &309434649
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,8 +592,12 @@ MonoBehaviour:
   gridSizeX: 10
   gridSizeY: 3
   gridSizeZ: 10
-  nodeRadius: 8
-  nodeSpace: 0
+  nodeXRadius: 8
+  nodeYRadius: 5
+  nodeZRadius: 8
+  nodeXSpace: 0
+  nodeYSpace: 0
+  nodeZSpace: 0
   cube: {fileID: 309434649}
   startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
@@ -585,6 +649,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &968518940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2407442422018815117, guid: 7138ca965206c614183c94065bc02506, type: 3}
+  m_PrefabInstance: {fileID: 339393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &968518941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968518940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e035f0aca230a4e963f36841edb15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomSize: {x: 8, y: 8}
+  doorCount: 4
+  doors:
+  - currentDoorLocation: 2
+    doorPosition: {x: 0, y: 0, z: 4}
+  - currentDoorLocation: 1
+    doorPosition: {x: 4, y: 0, z: 0}
+  - currentDoorLocation: 3
+    doorPosition: {x: 0, y: 0, z: -4}
+  - currentDoorLocation: 0
+    doorPosition: {x: -4, y: 0, z: 0}
+  doorRotations: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -594,3 +687,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 759944505}
   - {fileID: 309434653}
+  - {fileID: 339393}
