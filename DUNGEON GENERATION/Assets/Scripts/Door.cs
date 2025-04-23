@@ -1,17 +1,21 @@
 using UnityEngine;
 
 [System.Serializable]
-public class Door
+public class Door: MonoBehaviour
 {
-    public DoorLocation currentDoorLocation;
+    public bool isChosen;
+    public Direction doorDirection;
     [SerializeField] private Vector3 doorPosition;
+    [SerializeField] private Transform doorNodePosition;
     //public Node parentNode;
 }
-public enum DoorLocation
+public enum Direction
 {
     None,
-    Left,
-    Right,
     Front,
-    Back
+    Right,
+    Back,
+    Left,
+    Up,
+    Down
 }

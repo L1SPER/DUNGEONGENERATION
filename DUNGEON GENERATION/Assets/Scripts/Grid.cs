@@ -20,6 +20,8 @@ public class Grid : MonoBehaviour
     [SerializeField] private GameObject cube;
     [SerializeField] private Vector3 startPos;
 
+    [SerializeField] private LayerMask walkableLayerMask;
+
     void Start()
     {
         CreateGrid();
@@ -40,4 +42,21 @@ public class Grid : MonoBehaviour
             }
         }
     }
+    public Node GetNode(int x, int y, int z)
+    {
+        if (x < 0 || x >= gridSizeX || y < 0 || y >= gridSizeY || z < 0 || z >= gridSizeZ)
+        {
+            return null;
+        }
+        return grid[x, y, z];
+    }
+    public Node GetNode(Vector3 gridPos)
+    {
+        if (gridPos.x < 0 || gridPos.x >= gridSizeX || gridPos.y < 0 || gridPos.y >= gridSizeY || gridPos.z < 0 || gridPos.z >= gridSizeZ)
+        {
+            return null;
+        }
+        return grid[(int)gridPos.x,(int)gridPos.y,(int)gridPos.z];
+    }
+
 }
