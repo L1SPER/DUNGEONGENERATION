@@ -5,9 +5,7 @@ public class Door: MonoBehaviour
 {
     public bool isChosen;
     public Direction doorDirection;
-    [SerializeField] private Vector3 doorPosition;
-    [SerializeField] private Transform doorNodePosition;
-    //public Node parentNode;
+    //[SerializeField] public Vector3 doorPosition;
 }
 public enum Direction
 {

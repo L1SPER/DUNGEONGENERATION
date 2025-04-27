@@ -1,7 +1,5 @@
 using UnityEngine;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using JetBrains.Annotations;
+
 public class RoomNode 
 {
     public Vector3 position;
@@ -12,11 +10,23 @@ public class RoomNode
     public int roomId;
     public int level;
 
-    public RoomNode(Vector3 position, int level,  RoomNode parent = null)
+    public RoomNode(Vector3 position, RoomNode parent = null, GameObject room = null)
+    {
+        this.position = position;
+        this.parent = parent;
+        this.room = room; 
+        this.roomId = -1;
+        this.level = -1;
+        this.isVisited = false;
+    }
+    public RoomNode(Vector3 position, int level,  RoomNode parent = null, GameObject room = null)
     {
         this.position = position;
         this.level = level;
         this.parent = parent;
+        this.room = room; 
+        this.roomId = -1;
+        this.isVisited = false;
     }
     public void AddChild(RoomNode _child,RoomNode _parent)
     {
